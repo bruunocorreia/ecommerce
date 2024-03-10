@@ -5,8 +5,8 @@
 
 :root {
   --base: 24px;
-  --font-body: system-ui;
-  --font-mono: 'Roboto Mono', monospace;
+  --font-body: 'Montserrat', sans-serif; /* Alterada para a fonte Montserrat */
+  --font-jost: 'Montserrat', sans-serif; /* Alterada para a fonte Montserrat */
 
   --gutter-h: 180px;
   --block-padding: 120px;
@@ -28,7 +28,7 @@
 
 html {
   @extend %body;
-  background: var(--theme-bg);
+  background: var(--color-base-50); /* Alterado para uma cor de fundo mais clara */
   -webkit-font-smoothing: antialiased;
   opacity: 0;
 
@@ -45,18 +45,26 @@ body,
 }
 
 body {
-  font-family: var(--font-body);
+  font-family: var(--font-body); /* Alterada para a fonte do corpo */
   margin: 0;
-  color: var(--theme-text);
+  padding: 0;
+  color: var(--color-base-800); /* Alterada para um tom de cinza mais escuro */
+
+  display: flex;
+  flex-flow: column;
+}
+
+.main {
+  flex: 1 1 auto;
 }
 
 ::selection {
-  background: var(--theme-success-500);
+  background: var(--color-base-200); /* Alterado para uma cor de seleção mais clara */
   color: var(--color-base-800);
 }
 
 ::-moz-selection {
-  background: var(--theme-success-500);
+  background: var(--color-base-200); /* Alterado para uma cor de seleção mais clara */
   color: var(--color-base-800);
 }
 
@@ -91,30 +99,30 @@ h6 {
 }
 
 p {
-  margin: var(--base) 0;
-
-  @include mid-break {
-    margin: calc(var(--base) * .75) 0;
-  }
+  margin: 0;
 }
 
 ul,
 ol {
-  padding-left: var(--base);
-  margin: 0 0 var(--base);
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 a {
-  color: currentColor;
+  color: var(--color-base-800); /* Alterada para um tom de cinza mais escuro */
+  text-decoration: none;
 
   &:focus {
     opacity: .8;
     outline: none;
+    font-weight: bold;
+    color: black;
   }
 
   &:active {
-    opacity: .7;
-    outline: none;
+    font-weight: bold;
+    color: black;    
   }
 }
 
